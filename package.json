@@ -1,0 +1,37 @@
+{
+
+  "scripts": {
+
+    "start": "node app.js",
+
+    "deploy": "git push deploy master"
+
+  },
+
+  "config": {
+
+    "deploy": {
+
+      "production": {
+
+        "user": "Zhihao",
+
+        "host": "183.129.217.214",
+
+        "ref": "origin/master",
+
+          "repo": "ssh://git@183.129.217.214:/Zhihao/zhihao/zeroth-order.git",
+
+        "path": "/var/www/html/zhihao/zeroth-order",
+
+        "ssh_options": ["StrictHostKeyChecking=no", "PasswordAuthentication=no"],
+
+        "post-deploy": "npm install && pm2 restart app"
+
+      }
+
+    }
+
+  }
+
+}
